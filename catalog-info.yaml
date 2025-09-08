@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: githubactions-go-ajiahgeq-gitops
+  description: This is GitOps manifest for githubactions-go-ajiahgeq   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=githubactions-go-ajiahgeq
+    backstage.io/kubernetes-id: githubactions-go-ajiahgeq 
+    backstage.io/techdocs-ref: dir:. 
+    github.com/project-slug: rhtap-test-org/githubactions-go-ajiahgeq-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:githubactions-go-ajiahgeq
